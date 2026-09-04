@@ -1,0 +1,121 @@
+.ql-editor p {
+    margin-bottom: 0 !important; /* Removes framework paragraph spacing */
+}
+
+.ql-editor p:empty::before {
+    content: "\00a0"; /* Fixes height for blank lines */
+}
+
+/* iOS-style Image Container */
+.ql-editor .image-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 10px auto;
+    border-radius: 12px;
+    overflow: visible;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    vertical-align: middle;
+}
+
+.ql-editor .image-wrapper:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.image-wrapper img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: none;
+}
+
+.image-wrapper img.ql-image-enhanced {
+    outline: none;
+}
+
+/* iOS-style Delete Button - Red Circle with X */
+.image-delete-btn {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff3b30, #ff453a);
+    color: white;
+    border: 2px solid white;
+    font-size: 20px;
+    font-weight: 300;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(255, 59, 48, 0.4);
+    transition: all 0.2s ease;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    z-index: 1000;
+}
+
+.image-delete-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(255, 59, 48, 0.6);
+}
+
+.image-delete-btn:active {
+    transform: scale(0.9);
+}
+
+/* Resize Handle - Green Circle */
+.image-resize-handle {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #5AC8FA, #34C759);
+    border-radius: 50%;
+    cursor: nwse-resize;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    border: 2px solid white;
+}
+
+.image-wrapper:hover .image-resize-handle {
+    opacity: 1;
+}
+
+.image-resize-handle::after {
+    content: '⤡';
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    bottom: 3px;
+    right: 4px;
+    opacity: 0.8;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .image-delete-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 22px;
+        top: -14px;
+        right: -14px;
+    }
+
+    .image-resize-handle {
+        width: 32px;
+        height: 32px;
+        bottom: -12px;
+        right: -12px;
+    }
+}

@@ -1,0 +1,301 @@
+
+.floating-chat-button {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #0d6efd;
+    color: #ffffff;
+
+    border-radius: 50%;
+    text-decoration: none;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+
+    z-index: 9999;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.floating-chat-button:hover {
+    color: #ffffff;
+    background-color: #0b5ed7;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 9px 22px rgba(0, 0, 0, 0.3);
+}
+
+.floating-chat-badge {
+    position: absolute;
+
+    top: -11px;
+    right: 34px;
+
+    width: max-content;
+    height: 24px;
+
+    padding: 2px 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+
+#AiModal {
+    pointer-events: none;
+}
+
+
+#AiModal .modal-dialog {
+    pointer-events: auto;
+}
+
+
+#AiModal .ai-chat-dialog {
+    position: fixed;
+
+    right: 24px;
+    bottom: 95px;
+
+    width: 390px;
+    max-width: calc(100% - 30px);
+
+    margin: 0;
+}
+
+
+#AiModal.fade .ai-chat-dialog {
+    transform: translateY(20px);
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+#AiModal.show .ai-chat-dialog {
+    transform: translateY(0);
+}
+
+
+#AiModal .ai-chat-modal {
+    height: 550px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: none;
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.23);
+}
+
+
+#AiModal .ai-chat-header {
+    flex-shrink: 0;
+
+    padding: 16px 18px;
+
+    background-color: #ffffff;
+
+    border-bottom: 1px solid #e9ecef;
+}
+
+.ai-chat-avatar {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #0d6efd;
+    color: #ffffff;
+
+    font-size: 20px;
+}
+
+
+#AiModal .ai-chat-body {
+    flex: 1;
+
+    height: auto;
+    min-height: 0;
+
+    padding: 18px;
+
+    overflow-y: auto;
+
+    background-color: #f8f9fa;
+}
+
+
+#AiModal .ai-chat-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+#AiModal .ai-chat-body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+#AiModal .ai-chat-body::-webkit-scrollbar-thumb {
+    background-color: #ced4da;
+    border-radius: 10px;
+}
+
+
+.chat-message {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-bottom: 16px;
+}
+
+.chat-message-avatar {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #0d6efd;
+    color: #ffffff;
+}
+
+.chat-message-content {
+    max-width: 82%;
+
+    padding: 12px 14px;
+
+    background-color: #ffffff;
+
+    border-radius: 4px 14px 14px 14px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    font-size: 14px;
+
+    overflow-wrap: anywhere;
+}
+
+
+.user-message {
+    justify-content: flex-end;
+}
+
+.user-message .chat-message-content {
+    background-color: #0d6efd;
+    color: #ffffff;
+
+    border-radius: 14px 4px 14px 14px;
+}
+
+.generated-task-card {
+    width: 100%;
+
+    padding: 14px;
+    margin-bottom: 16px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #dee2e6;
+    border-radius: 14px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.generated-task-card .form-label {
+    margin-bottom: 4px;
+
+    font-size: 13px;
+}
+
+
+#AiModal .ai-chat-footer {
+    flex-shrink: 0;
+
+    padding: 14px 16px;
+
+    background-color: #ffffff;
+
+    border-top: 1px solid #e9ecef;
+}
+
+.ai-chat-input {
+    min-height: 44px;
+    max-height: 120px;
+
+    resize: none;
+
+    border-radius: 12px 0 0 12px;
+}
+
+.ai-chat-footer .btn {
+    min-width: 52px;
+
+    border-radius: 0 12px 12px 0;
+}
+
+
+@media (max-width: 576px) {
+    #AiModal .ai-chat-dialog {
+        right: 12px;
+        bottom: 82px;
+
+        width: calc(100% - 24px);
+        max-width: none;
+    }
+
+    #AiModal .ai-chat-modal {
+        height: 70vh;
+        max-height: 620px;
+    }
+
+    .floating-chat-button {
+        right: 16px;
+        bottom: 16px;
+
+        width: 52px;
+        height: 52px;
+    }
+
+    .floating-chat-badge {
+        display: none;
+    }
+}

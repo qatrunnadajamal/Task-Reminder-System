@@ -1,0 +1,99 @@
+/* sidebar*/
+#mySidebar{
+    width: 0;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #fff;
+    overflow-x: hidden;
+    transition: 0.3s;
+    box-shadow: 2px 0 15px rgba(197, 197, 197, 0.441);
+    z-index: 999;
+    padding-top: 10px;
+}
+
+.sidebar-item{
+    display:block;
+    padding:10px 18px;
+    text-decoration:none;
+    color:#333;
+    border-radius:8px;
+    margin:4px 10px;
+}
+
+.sidebar-item:hover{
+    background:#f8f9fa;
+}
+
+.sidebar-item.active{
+    background:#ffe8e8;
+    color:#ff4d4d;
+    font-weight:400;
+}
+
+/* noti dropdown */
+#notifList{
+    width: min(360px, calc(100vw - 1.5rem));
+    max-width: calc(100vw - 1.5rem);
+    max-height: min(600px, 80vh);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.notif-item:hover{
+    background:#f8f9fa;
+}
+.notif-item{
+    transition: 0.2s;
+    width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.notif-item:hover{
+    background: #f8f9fa;
+    transform: translateX(2px);
+}
+
+.notif-item .notif-content{
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.notif-item .notif-title-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+}
+
+.notif-item .notif-title{
+    flex: 1 1 0;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.notif-item .notif-message{
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.notif-item .badge{
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+.notif-item .btn{
+    flex-shrink: 0;
+}
+.dropdown-menu-end{
+    right: 0 !important;
+    left: auto !important;
+}
+.notif-delete {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: 0.3s ease;
+}
